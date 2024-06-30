@@ -26,13 +26,15 @@ func writeStringToFile(filename string, content string) {
 }
 
 func main() {
+	filepath := "/app/files/output.log"
+
 	uuid := uuid.New()
 
 	for {
 		output := getTimestamp() + " " + uuid.String()
 		fmt.Println(output)
 
-		writeStringToFile("/app/files/output.log", output)
+		writeStringToFile(filepath, output)
 
 		time.Sleep(time.Duration(5 * time.Second))
 	}
