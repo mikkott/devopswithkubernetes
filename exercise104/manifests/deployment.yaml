@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: project
+  template:
+    metadata:
+      labels:
+        app: project
+    spec:
+      containers:
+      - name: project
+        image: project:5a33b43c4847b64406e7cef3ded998013b241f45e84bcea4ad7743c3ff5a290c
+        imagePullPolicy: Never
