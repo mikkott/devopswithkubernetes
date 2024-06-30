@@ -8,10 +8,10 @@ The ping-pong application will need to listen requests on '/pingpong', so you ma
 
 ## Requirements
 
-[Golang](https://go.dev/doc/install)
-[Docker](https://docs.docker.com/engine/install/)
-[Kubectl](https://kubernetes.io/docs/reference/kubectl/)
-[k3d](https://github.com/rancher/k3d#get)
+- [Golang](https://go.dev/doc/install)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Kubectl](https://kubernetes.io/docs/reference/kubectl/)
+1. - [k3d](https://github.com/rancher/k3d#get)1. 
 
 ## Usage
-`make all`
+1. `make all`

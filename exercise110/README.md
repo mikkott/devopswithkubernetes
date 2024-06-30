@@ -10,10 +10,10 @@ Either application can generate the hash. The reader or the writer.
 
 ## Requirements
 
-[Golang](https://go.dev/doc/install)
-[Docker](https://docs.docker.com/engine/install/)
-[Kubectl](https://kubernetes.io/docs/reference/kubectl/)
-[k3d](https://github.com/rancher/k3d#get)
+- [Golang](https://go.dev/doc/install)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Kubectl](https://kubernetes.io/docs/reference/kubectl/)
+- [k3d](https://github.com/rancher/k3d#get)
 
 ## Usage
-`make all`
+1. `make all`

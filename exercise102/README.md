@@ -4,11 +4,11 @@ Create a web server that outputs "Server started in port NNNN" when it is starte
 
 ## Requirements
 
-[Golang](https://go.dev/doc/install)
-[Docker](https://docs.docker.com/engine/install/)
-[Kubectl](https://kubernetes.io/docs/reference/kubectl/)
-[k3d](https://github.com/rancher/k3d#get)
+- [Golang](https://go.dev/doc/install)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Kubectl](https://kubernetes.io/docs/reference/kubectl/)
+- [k3d](https://github.com/rancher/k3d#get)
 
 ## Usage
-`./build.sh`
-`kubectl apply -f manifests/deployment.yaml`
+1. `./build.sh`
+2. `kubectl apply -f manifests/deployment.yaml`

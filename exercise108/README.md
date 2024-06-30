@@ -4,13 +4,13 @@ Switch to using Ingress instead of NodePort to access the project. You can delet
 
 ## Requirements
 
-[Golang](https://go.dev/doc/install)
-[Docker](https://docs.docker.com/engine/install/)
-[Kubectl](https://kubernetes.io/docs/reference/kubectl/)
-[k3d](https://github.com/rancher/k3d#get)
+- [Golang](https://go.dev/doc/install)
+- [Docker](https://docs.docker.com/engine/install/)
+- [Kubectl](https://kubernetes.io/docs/reference/kubectl/)
+- [k3d](https://github.com/rancher/k3d#get)
 
 ## Usage
-`./build.sh`
-`kubectl apply -f manifests/deployment.yaml`
-`kubectl apply -f manifests/service.yaml`
-`kubectl apply -f manifests/ingress.yaml`
+1. `./build.sh`
+2. `kubectl apply -f manifests/deployment.yaml`
+3. `kubectl apply -f manifests/service.yaml`
+4. `kubectl apply -f manifests/ingress.yaml`
