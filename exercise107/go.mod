@@ -1,4 +1,4 @@
-module exercise101
+module logoutput
 
 go 1.22.4
 
