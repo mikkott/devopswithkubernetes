@@ -16,7 +16,7 @@ func main() {
 		log.Fatal("PORT environment variable not set")
 	}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/pingpong", func(w http.ResponseWriter, r *http.Request) {
 		pongCounter++
 		fmt.Fprint(w, "pong ", pongCounter)
 	})
