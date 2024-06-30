@@ -1,11 +1,16 @@
-# Project
+# Exercise 1.08: Project v0.5
 
-Builds and deploys Golang http server.
+Switch to using Ingress instead of NodePort to access the project. You can delete the ingress of the "Log output" application so they don't interfere with this exercise. We'll look more into paths and routing in the next exercise and at that point you can configure project to run with the "Log output" application side by side.
 
-Automated build steps in `build.sh` to build minimal sized golang binary in Docker image, import Docker image to k3d and configure k8s manifest template.
+## Requirements
 
-To deploy in k8s: `kubectl apply -f manifests/deployment.yaml`
+[Golang](https://go.dev/doc/install)
+[Docker](https://docs.docker.com/engine/install/)
+[Kubectl](https://kubernetes.io/docs/reference/kubectl/)
+[k3d](https://github.com/rancher/k3d#get)
 
-# k3d
-
-`k3d cluster create --port 8082:30080@agent:0 -p 8081:80@loadbalancer --agents 2`
+## Usage
+`./build.sh`
+`kubectl apply -f manifests/deployment.yaml`
+`kubectl apply -f manifests/service.yaml`
+`kubectl apply -f manifests/ingress.yaml`

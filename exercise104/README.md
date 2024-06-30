@@ -1,6 +1,8 @@
-# Exercise 1.06: Project v0.4
+# Exercise 1.04: Project v0.2
 
-Use a NodePort Service to enable access to the project.
+Create a deployment.yaml for the project.
+
+You won't have access to the port yet but that'll come soon.
 
 ## Requirements
 
@@ -12,4 +14,3 @@ Use a NodePort Service to enable access to the project.
 ## Usage
 `./build.sh`
 `kubectl apply -f manifests/deployment.yaml`
-`kubectl apply -f manifests/service.yaml`

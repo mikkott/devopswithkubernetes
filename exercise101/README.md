@@ -1,6 +1,9 @@
-# Exercise 1.06: Project v0.4
+# Exercise 1.01: Getting started
 
-Use a NodePort Service to enable access to the project.
+Exercises can be done with any language and framework you want.
+
+Create an application that generates a random string on startup, stores this string into memory, and outputs it every 5 seconds with a timestamp. e.g.
+
 
 ## Requirements
 
@@ -12,4 +15,3 @@ Use a NodePort Service to enable access to the project.
 ## Usage
 `./build.sh`
 `kubectl apply -f manifests/deployment.yaml`
-`kubectl apply -f manifests/service.yaml`

@@ -1,6 +1,7 @@
-# Exercise 1.06: Project v0.4
+# Exercise 1.03: Getting started
 
-Use a NodePort Service to enable access to the project.
+In your "Log output" application create a folder for manifests and move your deployment into a declarative file.
+
 
 ## Requirements
 
@@ -12,4 +13,3 @@ Use a NodePort Service to enable access to the project.
 ## Usage
 `./build.sh`
 `kubectl apply -f manifests/deployment.yaml`
-`kubectl apply -f manifests/service.yaml`
