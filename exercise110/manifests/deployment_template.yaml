@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logoutput
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logoutput
+  template:
+    metadata:
+      labels:
+        app: logoutput
+    spec:
+      volumes: # Define volume
+        - name: shared-logs
+          emptyDir: {}
+      containers:
+      - name: logoutputwriter
+        image: logoutputwriter:latest
+        volumeMounts: # Mount volume
+        - name: shared-logs
+          mountPath: /app/files
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+      - name: logoutputreader
+        image: logoutputreader:latest
+        volumeMounts: # Mount volume
+        - name: shared-logs
+          mountPath: /app/files
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
