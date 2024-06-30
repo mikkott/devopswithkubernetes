@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
       - name: project
-        image: project:latest
+        image: project:5a33b43c4847b64406e7cef3ded998013b241f45e84bcea4ad7743c3ff5a290c
         imagePullPolicy: Never
