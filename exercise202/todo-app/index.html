@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project v0.7</title>
+</head>
+<body>
+    <h1>Project v0.7</h1>
+    
+    <img src="files/image.jpg" alt="Image Description">
+    
+    <form id="todoForm">
+        <input type="text" name="todo" placeholder="TODO" maxlength="140">
+        <button type="submit">Create TODO</button>
+    </form>
+    <script>
+        document.getElementById('todoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const formData = new FormData(this);
+            fetch('http://localhost:8081/todos', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    console.log('TODO created successfully');
+                    // Handle success response
+                    location.reload(); // Refresh the page
+                } else {
+                    console.error('Failed to create TODO');
+                    // Handle error response
+                }
+            }).catch(error => console.error('Error:', error));
+        });
+    </script>
+    <script src="static/todos.js"></script>
+</body>
+</html>

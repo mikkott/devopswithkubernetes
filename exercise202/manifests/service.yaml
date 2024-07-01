@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo
+spec:
+  type: ClusterIP
+  selector:
+    app: todo
+  ports:
+    - name: todo-app
+      port: 2345
+      protocol: TCP
+      targetPort: 8080
+    - name: todo-backend
+      port: 3456
+      protocol: TCP
+      targetPort: 8081

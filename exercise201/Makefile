@@ -42,9 +42,9 @@ push-pingpong:
 
 .PHONY: configure
 configure:
-	$(eval DIGEST_logoutputreader := $(shell docker images --no-trunc --quiet logoutputreader:latest | cut -d':' -f2))
+	$(eval DIGEST_LOGOUTPUTREADER := $(shell docker images --no-trunc --quiet logoutputreader:latest | cut -d':' -f2))
 	$(eval DIGEST_PINGPONG := $(shell docker images --no-trunc --quiet pingpong:latest | cut -d':' -f2))
-	sed -e "s/logoutputreader:latest/logoutputreader:$(DIGEST_logoutputreader)/g" -e "s/pingpong:latest/pingpong:$(DIGEST_PINGPONG)/g" manifests/deployment_template.yaml > manifests/deployment.yaml
+	sed -e "s/logoutputreader:latest/logoutputreader:$(DIGEST_LOGOUTPUTREADER)/g" -e "s/pingpong:latest/pingpong:$(DIGEST_PINGPONG)/g" manifests/deployment_template.yaml > manifests/deployment.yaml
 
 .PHONY: deploy
 deploy:
