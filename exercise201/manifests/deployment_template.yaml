@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pingpong
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pingpong
+  template:
+    metadata:
+      labels:
+        app: pingpong
+    spec:
+      volumes:
+        - name: pingpong
+          persistentVolumeClaim:
+            claimName: pingpong
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+      containers:
+      - name: logoutputreader
+        image: logoutputreader:latest
+        securityContext:
+          allowPrivilegeEscalation: false
+        volumeMounts: # Mount volume
+        - name: pingpong
+          mountPath: /app/files
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+      - name: pingpong
+        image: pingpong:latest
+        securityContext:
+          allowPrivilegeEscalation: false
+        volumeMounts: # Mount volume
+        - name: pingpong
+          mountPath: /app/files
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
