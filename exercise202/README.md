@@ -7,6 +7,7 @@ This new service, let us call it todo-backend, should have a GET /todos endpoint
 Use ingress routing to enable access to the todo-backend.
 
 After this exercise, the project should look like the following:
+
 ![diagram](https://devopswithkubernetes.com/static/bc4bed9387ebafa11912ae48b2339d14/b3c31/p2-2.webp)
 
 The role of the service that we made in previous exercises (Todo-app in the figure) is to serve the HTML and possibly JavaScript to the browser. Also, the logic for serving random pictures and caching those remain in that service.
